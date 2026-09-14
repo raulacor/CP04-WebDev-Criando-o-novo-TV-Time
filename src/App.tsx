@@ -1,8 +1,14 @@
 import WebThreads from './components/WebThreads/WebThreads';
 import Navbar from './components/Navbar/Navbar';
+import './App.css'
+
+import { IoIosArrowDown } from "react-icons/io";
+
+
+
 export default function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <div style={{ width: '100%', height: '800px', position: 'relative' }}>
         <WebThreads
@@ -29,6 +35,11 @@ export default function App() {
           mouseStrength={0.3}
         />
       </div>
-    </div>
+      <h1>Tv Time</h1>
+      <div className='cta'>
+        <h2>cinefilar</h2>
+        <span className='cta-btn'><IoIosArrowDown size={25}/></span>
+      </div>
+    </>
   )
 }
