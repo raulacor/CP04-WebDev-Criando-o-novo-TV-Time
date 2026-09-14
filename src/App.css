@@ -1,0 +1,28 @@
+:root {
+  --dark-blue: #0A1828; 
+  --turquoise: #178582;
+  --gold: #BFA181;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+
+
+}
+#navbar {
+    color: var(--gold);
+}

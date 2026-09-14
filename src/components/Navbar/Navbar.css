@@ -1,0 +1,49 @@
+:root {
+  --dark-blue: #0A1828; 
+  --turquoise: #178582;
+  --turquoise-glow: #30f6ef;
+  --gold: #BFA181;
+  --gold-glow: #FFD9A0;
+
+
+}
+.nav {
+    margin-top: 35px ;
+}
+.nav ul {
+    display: flex;
+    margin-inline: auto;
+    margin-bottom: 20px;
+    font-family: "Tac One", sans-serif;
+    font-size: 1.3em;
+    letter-spacing: 0.1em;
+    gap: 30px;
+    width: 600px;
+    justify-content: center;
+    list-style: none;
+}
+#navbar {
+    position: relative;
+    color: var(--turquoise);
+    
+}
+#navbar li {
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+
+}
+#navbar::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(to right, #ffffff00,  var(--turquoise), #ffffff00);
+    width: 100%;
+    
+}
+#navbar li:hover {
+    color: var(--gold-glow);
+    text-shadow:
+        0 0 4px  rgb(255 217 160 / 0.9),
+        0 0 12px rgb(191 161 129 / 0.7),
+        0 0 28px rgb(191 161 129 / 0.4);
+
+}
