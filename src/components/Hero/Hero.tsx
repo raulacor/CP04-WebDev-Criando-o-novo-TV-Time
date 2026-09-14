@@ -1,4 +1,4 @@
-import WebThreads from '../WebThreads/WebThreads';
+import WebThreads from './WebThreads/WebThreads';
 import { IoIosArrowDown } from "react-icons/io";
 
 import './Hero.css'
