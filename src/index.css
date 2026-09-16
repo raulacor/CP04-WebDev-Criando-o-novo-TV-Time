@@ -1,23 +1,24 @@
 :root {
-  --dark-blue: #0A1828; 
-  --blue-bg1: #1e477681; 
+  --dark-blue: #0a1828;
+  --blue-bg1: #1e477681;
   --turquoise: #178582;
   --turquoise-glow: #30f6ef;
-  --gold: #BFA181;
-  --gold-glow: #FFD9A0;
+  --gold: #bfa181;
+  --gold-glow: #ffd9a0;
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
-body{
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-x: hidden;
-    background: linear-gradient(to bottom, #0A1828, #050d16);
+body {
+  color: #faf9f9;
+  font-family: "Tac-One", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background: linear-gradient(to bottom, #0a1828, #050d16);
 }

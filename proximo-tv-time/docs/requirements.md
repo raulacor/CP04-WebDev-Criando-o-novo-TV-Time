@@ -3,15 +3,19 @@
 ## 1. Visão do Produto
 
 ### Nome
+
 [Nome da aplicação]
 
 ### Problema
+
 [Qual problema você identificou?]
 
 ### Público
+
 [Quem possui esse problema?]
 
 ### Proposta de solução
+
 [Como sua aplicação resolve o problema?]
 
 ## 2. Objetivo do MVP
@@ -24,12 +28,13 @@
 
 **Descrição:** [O que a funcionalidade faz?]
 
-
 **Critérios de aceitação:**
+
 - [ ] [Critério verificável]
 - [ ] [Critério verificável]
 
 **Estados:**
+
 - [ ] Inicial
 - [ ] Carregando
 - [ ] Sucesso
@@ -41,6 +46,7 @@
 **Descrição:** [O que a funcionalidade faz?]
 
 **Critérios de aceitação:**
+
 - [ ] [Critério verificável]
 - [ ] [Critério verificável]
 
@@ -51,3 +57,4 @@
 - [Item]
 - [Item]
 
+```
