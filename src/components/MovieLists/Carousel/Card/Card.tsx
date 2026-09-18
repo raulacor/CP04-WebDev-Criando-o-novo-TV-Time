@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import { CiCircleCheck, CiClock2 } from "react-icons/ci";
 import "./Card.css";
 import { IMG_BASE, type Movie } from "../../../../API/tmdb";
-
+import { useLists } from "../../../../context/ListsContext";
 
 export default function Card({ movie }: { movie: Movie }) {
+  const { toggleFavorite, toggleWatched, isFavorite, isWatched } = useLists();
+
   function description(text: string, max = 220) {
     if (text.length <= max) return text;
     return (
@@ -15,7 +18,7 @@ export default function Card({ movie }: { movie: Movie }) {
   }
 
   return (
-    <div className="card">
+    <Link to={`/movie/${movie.id}`} className="card">
       {movie.poster_path ? (
         <img src={IMG_BASE + movie.poster_path} alt={movie.title} id="poster" />
       ) : (
@@ -29,10 +32,28 @@ export default function Card({ movie }: { movie: Movie }) {
       <div className="add_ons">
         <h4 id="genre">{movie.genre_ids[0]}</h4>
         <div className="add_or_watched">
-          <button id="add"><CiCircleCheck size={40} /></button>
-          <button id="watched"><CiClock2 size={40} /></button>
+          <button
+            id="add"
+            className={isFavorite(movie.id) ? "active-add" : ""}
+            onClick={(e) => {
+              e.preventDefault();
+              toggleFavorite(movie);
+            }}
+          >
+            <CiCircleCheck size={40} />
+          </button>
+          <button
+            id="watched"
+            className={isWatched(movie.id) ? "active-watched" : ""}
+            onClick={(e) => {
+              e.preventDefault();
+              toggleWatched(movie);
+            }}
+          >
+            <CiClock2 size={40} />
+          </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

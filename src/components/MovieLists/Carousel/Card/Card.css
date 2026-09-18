@@ -79,11 +79,20 @@
 .add_or_watched button {
   background: none;
   border: none;
+  cursor: pointer;
   color: rgba(135, 130, 130, 0.393);
 }
-.add_or_watched #add:hover {
+.add_or_watched #add:hover,
+.add_or_watched .active-add {
   color: var(--turquoise-glow);
 }
-.add_or_watched #watched:hover {
+.add_or_watched #watched:hover,
+.add_or_watched .active-watched {
   color: #ff9306fc;
+}
+
+/* The whole card is now a <Link>, so kill the anchor defaults. */
+.card {
+  text-decoration: none;
+  color: inherit;
 }

@@ -1,14 +1,18 @@
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import MovieLists from "./components/MovieLists/MovieLists";
+import Home from "./pages/Home";
+import MovieDetail from "./pages/MovieDetail/MovieDetail";
+import { ListsProvider } from "./context/Lists";
 import "./App.css";
 
 export default function App() {
   return (
-    <>
+    <ListsProvider>
       <Navbar />
-      <Hero />
-      <MovieLists />
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<MovieDetail />} />
+      </Routes>
+    </ListsProvider>
   );
 }

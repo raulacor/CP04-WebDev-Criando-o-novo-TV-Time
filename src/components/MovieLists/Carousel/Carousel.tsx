@@ -1,14 +1,18 @@
 import "./Carousel.css";
 import Card from "./Card/Card";
-import { useMovies } from "../../../API/tmdb";
+import { useMovies, type Movie } from "../../../API/tmdb";
 
 type Props = {
-  path: string;
   title: string;
+  path?: string;
+  list?: Movie[];
 };
 
-export default function Carousel({ path, title }: Props) {
-  const movies = useMovies(path);
+export default function Carousel({ path, title, list }: Props) {
+  const fetched = useMovies(path ?? "");
+  const movies = list ?? fetched;
+
+  if (list && list.length === 0) return null;
 
   return (
     <div className="carousel-section">
