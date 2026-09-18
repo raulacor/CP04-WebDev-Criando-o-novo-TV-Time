@@ -1,0 +1,157 @@
+.featured-card {
+  position: relative;
+  width: 85%;
+  aspect-ratio: 20 / 9;
+  min-height: 400px;
+  max-height: 540px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  background-color: var(--dark-blue);
+  background-size: cover;
+  background-position: center 20%;
+  /* Stops the image painting under the translucent border, which made
+     the edge look doubled. */
+  background-clip: padding-box;
+  display: flex;
+  align-items: center;
+}
+
+/* Darkens the left side so the text stays readable over any still. */
+.featured-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      rgba(5, 13, 22, 0.95) 0%,
+      rgba(5, 13, 22, 0.85) 35%,
+      rgba(5, 13, 22, 0.15) 75%,
+      rgba(5, 13, 22, 0) 100%
+    ),
+    linear-gradient(to top, rgba(5, 13, 22, 0.8) 0%, rgba(5, 13, 22, 0) 45%);
+}
+
+.featured-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 52%;
+  min-width: 0;
+  padding: 0 40px;
+}
+
+.featured-badge {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background-color: var(--gold);
+  color: var(--dark-blue);
+  font-family: "Tac One", sans-serif;
+  font-size: 0.7em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.featured-name {
+  font-family: "Tac One", sans-serif;
+  font-size: 2.6em;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #faf9f9;
+}
+
+.featured-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: "Playfair Display", serif;
+  font-size: 0.85em;
+  color: #ffffff9c;
+}
+
+/* Separators between the meta items, but not before the first. */
+.featured-meta span + span::before {
+  content: "•";
+  margin-right: 14px;
+  color: #ffffff5c;
+}
+
+.featured-score {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.featured-description {
+  font-family: "Playfair Display", serif;
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #ffffffb0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.featured-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.featured-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #faf9f9c4;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.featured-actions button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.featured-actions button:first-child:hover,
+.featured-actions .active-add {
+  color: var(--turquoise-glow);
+  border-color: var(--turquoise);
+}
+
+.featured-actions button:last-child:hover,
+.featured-actions .active-watched {
+  color: #ff9306fc;
+  border-color: #ff930680;
+}
+
+@media (max-width: 800px) {
+  .featured-content {
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  .featured-name {
+    font-size: 1.8em;
+  }
+}
+
+.featured-name {
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.featured-name:hover {
+  color: var(--gold-glow);
+}

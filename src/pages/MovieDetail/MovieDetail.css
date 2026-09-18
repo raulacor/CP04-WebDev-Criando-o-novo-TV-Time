@@ -1,0 +1,223 @@
+.detail {
+  padding-bottom: 100px;
+}
+
+/* --- loading / error --- */
+.detail-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 180px;
+  font-family: "Playfair Display", serif;
+  color: #ffffffb0;
+}
+
+.detail-state a {
+  color: var(--turquoise-glow);
+}
+
+/* --- banner --- */
+.detail-banner {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background-color: var(--dark-blue);
+  background-size: cover;
+  background-position: center 25%;
+}
+
+.detail-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 13, 22, 0.55) 0%,
+    rgba(5, 13, 22, 0.35) 40%,
+    rgba(10, 24, 40, 0.95) 92%,
+    rgba(10, 24, 40, 1) 100%
+  );
+}
+
+.detail-back {
+  position: absolute;
+  top: 110px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #faf9f9c4;
+  font-family: "Playfair Display", serif;
+  font-size: 0.85em;
+  text-decoration: none;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.detail-back:hover {
+  color: var(--turquoise-glow);
+  border-color: var(--turquoise);
+}
+
+/* --- body --- */
+.detail-body {
+  display: flex;
+  gap: 40px;
+  width: 85%;
+  margin-inline: auto;
+  margin-top: -140px;
+  position: relative;
+}
+
+.detail-poster {
+  width: 260px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+}
+
+.detail-poster-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 390px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.046);
+  color: #ffffffb0;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding-top: 150px;
+}
+
+.detail-title {
+  font-family: "Tac One", sans-serif;
+  font-size: 2.8em;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--gold);
+}
+
+.detail-tagline {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  color: var(--turquoise);
+}
+
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  font-family: "Playfair Display", serif;
+  font-size: 0.85em;
+  color: #ffffff9c;
+}
+
+.detail-meta span + span::before {
+  content: "•";
+  margin-right: 14px;
+  color: #ffffff5c;
+}
+
+.detail-score {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.detail-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin-top: 4px;
+}
+
+.detail-genres li {
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.046);
+  font-family: "Playfair Display", serif;
+  font-size: 0.75em;
+  color: #ffffffb0;
+}
+
+.detail-heading {
+  margin-top: 14px;
+  font-family: "Cinzel", serif;
+  font-size: 1.1em;
+  color: #faf9f9;
+}
+
+.detail-overview {
+  max-width: 70ch;
+  font-family: "Playfair Display", serif;
+  line-height: 1.6;
+  color: #ffffffb0;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.detail-actions button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #faf9f9c4;
+  font-family: "Playfair Display", serif;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.detail-actions button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.detail-actions button:first-child:hover,
+.detail-actions .active-add {
+  color: var(--turquoise-glow);
+  border-color: var(--turquoise);
+}
+
+.detail-actions button:last-child:hover,
+.detail-actions .active-watched {
+  color: #ff9306fc;
+  border-color: #ff930680;
+}
+
+@media (max-width: 800px) {
+  .detail-body {
+    flex-direction: column;
+    align-items: center;
+    margin-top: -100px;
+  }
+
+  .detail-info {
+    padding-top: 0;
+  }
+
+  .detail-title {
+    font-size: 2em;
+  }
+}
